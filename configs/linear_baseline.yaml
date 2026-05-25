@@ -1,0 +1,14 @@
+# configs/linear_baseline.yaml
+
+metadata:
+  experiment_name: "linear_alignment_phase_1"
+  
+dimensions:
+  latent_dim: 50        # d: Size of the shared latent space
+  ambient_dim_1: 200    # D1: Dimension of Modality 1
+  ambient_dim_2: 200    # D2: Dimension of Modality 2
+  num_samples: 1000     # N: Number of data points
+
+simulation:
+  noise_level: 0.1
+  seed: 42
