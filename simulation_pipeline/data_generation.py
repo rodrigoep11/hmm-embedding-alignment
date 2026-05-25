@@ -45,18 +45,3 @@ def compute_empirical_overlaps(X, Y):
     Q_XY = (X_centered.T @ Y_centered) / X.shape[0]
     return Q_XY
 
-if __name__ == "__main__":
-    # Path handling to ensure it runs from any directory
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    config_file = os.path.join(script_dir, "../configs/linear_baseline.yaml")
-    
-    # Run the generation pipeline
-    config = load_config(config_file)
-    X, Y, V = generate_linear_hmm(config)
-    Q_XY = compute_empirical_overlaps(X, Y)
-    
-    print(f"--- HMM Sandbox Initialized Successfully ---")
-    print(f"Modality 1 Data Shape (X): {X.shape}")
-    print(f"Modality 2 Data Shape (Y): {Y.shape}")
-    print(f"Empirical Overlap Matrix Shape: {Q_XY.shape}")
-    print(f"Top-left 3x3 block of empirical alignment:\n{Q_XY[:3, :3]}")
